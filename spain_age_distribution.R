@@ -12,8 +12,8 @@ font_add_google("Space Mono", "spacemono")
 showtext_opts(dpi = 200)
 showtext_auto()
 
-script_arg <- grep("--file=", commandArgs(FALSE), value = TRUE)
-here <- if (interactive()) "." else dirname(sub("--file=", "", script_arg))
+#script_arg <- grep("--file=", commandArgs(FALSE), value = TRUE)
+#here <- if (interactive()) "." else dirname(sub("--file=", "", script_arg))
 wpp <- read.csv(file.path(here, "spain_wpp2024.csv"), fileEncoding = "UTF-8-BOM")
 
 groups <- c("0-9", "10-19", "20-29", "30-39", "40-49",
@@ -116,5 +116,4 @@ grid.text("DATA: UN WORLD POPULATION PROSPECTS 2024 (MEDIUM VARIANT)", x = 0.97,
           just = "right", gp = gpar(fontfamily = "bebas", fontsize = 9))
 grid.text("@caroisallin", x = 0.03, y = 0.016,
           just = "left", gp = gpar(fontfamily = "bebas", fontsize = 9))
-invisible(dev.off())
-message("Wrote ", out)
+
